@@ -2,9 +2,11 @@ package cn.zkf.service.impl;
 
 import cn.zkf.domain.Account;
 import cn.zkf.service.AccountService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("accountService")
 public class AccountServiceImpl implements AccountService {
     @Override
     public List<Account> findAll() {

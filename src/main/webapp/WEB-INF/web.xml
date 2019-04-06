@@ -32,6 +32,7 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+    <!--需要拦截的地址-->
     <filter-mapping>
         <filter-name>characterEncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
