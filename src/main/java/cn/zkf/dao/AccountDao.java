@@ -22,6 +22,6 @@ public interface AccountDao {
      * 保存账户信息
      * @param account
      */
-    @Insert("insert into account （name,money）values(#{name},#{money})")
+    @Insert("insert into account (name,money) values(#{name},#{money})")
     public void saveAccount(Account account);
 }
