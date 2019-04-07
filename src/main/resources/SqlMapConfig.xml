@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置环境-->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/ssm"></property>
+                <property name="username" value="root"></property>
+                <property name="password" value="root"></property>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    <!--引入的映射配置文件-->
+    <mappers>
+        <!--1使用配置文件-->
+       <!-- <mapper resource="cn/zkf/dao/xxx.xml"></mapper>-->
+
+        <!--2使用注解，class路径-->
+        <!--<mapper class="cn.zkf.dao.AccountDao"></mapper>-->
+
+        <!--3，使用包名,进行扫描-->
+        <package name="cn.zkf.dao"></package>
+    </mappers>
+</configuration>

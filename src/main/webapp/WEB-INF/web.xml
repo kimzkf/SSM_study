@@ -6,7 +6,7 @@
     <display-name>Archetype Created Web Application</display-name>
 
     <!--配置spring的监听器,默认只加载WEB-INF目录下的applicationContext。xml文件-->
-    <!--用于spring与springMVC的结合-->
+    <!--用于spring与springMVC的整合-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoader</listener-class>
     </listener>
@@ -15,7 +15,11 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
-    
+    <context-param>
+        <param-name/>
+        <param-value/>
+    </context-param>
+
     <!--配置前端控制器-->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
