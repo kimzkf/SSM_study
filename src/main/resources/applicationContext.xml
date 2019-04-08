@@ -39,10 +39,23 @@
         <property name="basePackage" value="cn.zkf.dao.**"></property>
     </bean>
 
-    <!-- 注解事务 -->
-    <!--<bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>-->
-    <!-- 开启注解 -->
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+    <!-- 配置spring框架声明式事务管理 -->
+    <!--1配置事务管理器-->
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--2配置事务的通知-->
+    <tx:advice id="txAdvice" transaction-manager="dataSourceTransactionManager">
+        <tx:attributes>
+            <tx:method name="find*" read-only="true"></tx:method>
+            <tx:method name="*" isolation="DEFAULT"></tx:method>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--3配置AOP增强-->
+    <aop:config>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* cn.zkf.service.impl.*ServiceImpl.*(..))"></aop:advisor>
+    </aop:config>
+
 </beans>

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -35,5 +37,21 @@ public class AccountController {
 
         model.addAttribute("accountList",accountList);
         return "success";
+    }
+    /**
+     * 保存用户信息
+     *
+     * @return
+     */
+    @RequestMapping(path = "/saveAccount")
+    public void findAll(Account account, HttpServletRequest request, HttpServletResponse response) throws  Exception {
+        System.out.println("saveAccount.....");
+
+        //调用service方法
+        accountService.saveAccount(account);
+
+        //重定向
+        response.sendRedirect(request.getContextPath() + "/account/findAll");
+        return;
     }
 }

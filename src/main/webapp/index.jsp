@@ -12,5 +12,12 @@
 </head>
 <body>
 <a href="account/findAll" >查询所有用户信息</a>
+<hr/>
+<h3>测试保存用户信息</h3>
+<form action="account/saveAccount" method="post">
+    姓名：<input type="text" name="name" value="" /><br/>
+    money：<input type="number" name="money" value="" /><br/>
+    <input type="submit" name="submit"/>
+</form>
 </body>
 </html>
