@@ -19,7 +19,7 @@ public class TestMyBatis {
     @Test
     public void testAccountMyBatis() throws Exception{
         //加载MyBatis配置文件
-        InputStream in=Resources.getResourceAsStream("SqlMapConfig.xml");
+        InputStream in=Resources.getResourceAsStream("SqlMapConfig1.xml");
 
         //创建SqlSessionFactory对象
         SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(in);
@@ -47,7 +47,7 @@ public class TestMyBatis {
     @Test
     public void testSaveAccountMyBatis() throws Exception{
         //加载MyBatis配置文件
-        InputStream in=Resources.getResourceAsStream("SqlMapConfig.xml");
+        InputStream in=Resources.getResourceAsStream("SqlMapConfig1.xml");
 
         //创建SqlSessionFactory对象
         SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(in);

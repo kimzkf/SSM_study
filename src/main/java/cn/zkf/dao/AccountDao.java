@@ -3,13 +3,16 @@ package cn.zkf.dao;
 import cn.zkf.domain.Account;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * 账户dao接口
  * mybatis可以实现，不用写实现类
+ * Repository:把AccountDao交给IOC容器管理
  */
+@Repository
 public interface AccountDao {
     /**
      * 查询所有账户
